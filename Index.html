@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&G ESTÁNDAR, S.U.R.L. — Instrumentos Industriales de Medición en Cuba</title>
+  <meta name="description" content="C&G ESTÁNDAR, S.U.R.L., MIPYME cubana especializada en instrumentos industriales de medición. Cotiza por WhatsApp: manómetros, termómetros, calibradores, multímetros y más.">
+  <style>
+    :root {
+      --azul: #0b5fff;
+      --gris-fondo: #0d1117;
+      --gris-card: #161b22;
+      --gris-borde: #30363d;
+      --texto: #e6edf3;
+      --texto-suave: #8b949e;
+      --verde-wa: #25D366;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0;
+      background: rgba(13, 17, 23, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gris-borde);
+      z-index: 100;
+    }
+    nav .container {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+    }
+    .logo { font-weight: 700; font-size: 1.05rem; }
+    .logo span { color: var(--azul); }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav a {
+      color: var(--texto-suave); text-decoration: none;
+      font-size: 0.95rem; transition: color 0.2s;
+    }
+    nav a:hover { color: var(--texto); }
+    @media (max-width: 700px) { nav ul { display: none; } }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 0 4rem; text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(11,95,255,0.15), transparent 60%);
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 800; margin-bottom: 1rem; line-height: 1.15;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--azul), #58a6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: var(--texto-suave); max-width: 620px;
+      margin: 0 auto 2rem; font-size: 1.1rem;
+    }
+    .cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--verde-wa); color: white;
+      padding: 1rem 2rem; border-radius: 8px;
+      font-weight: 700; text-decoration: none; font-size: 1.05rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+    }
+
+    /* SECCIONES */
+    section { padding: 4rem 0; }
+    .titulo { text-align: center; margin-bottom: 3rem; }
+    .titulo h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 0.5rem; }
+    .titulo p { color: var(--texto-suave); }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--gris-card);
+      border: 1px solid var(--gris-borde);
+      border-radius: 12px; padding: 1.75rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--azul); }
+    .card .icono { font-size: 2rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .card p { color: var(--texto-suave); font-size: 0.95rem; }
+
+    /* BENEFICIOS */
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem; text-align: center;
+    }
+    .beneficio h3 { color: var(--azul); font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .beneficio p { color: var(--texto-suave); font-size: 0.9rem; }
+
+    /* CTA FINAL */
+    .cta-final {
+      text-align: center; background: var(--gris-card);
+      border: 1px solid var(--gris-borde);
+      border-radius: 16px; padding: 3rem 1.5rem;
+    }
+    .cta-final h2 { margin-bottom: 1rem; }
+    .cta-final p {
+      color: var(--texto-suave); margin-bottom: 2rem;
+      max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gris-borde);
+      padding: 2rem 0; text-align: center;
+      color: var(--texto-suave); font-size: 0.9rem;
+    }
+    footer a { color: var(--azul); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* BOTÓN FLOTANTE */
+    .wa-flotante {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      background: var(--verde-wa); width: 58px; height: 58px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+      z-index: 200; transition: transform 0.2s;
+    }
+    .wa-flotante:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <div class="logo">C&G <span>ESTÁNDAR, S.U.R.L.</span></div>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Por qué elegirnos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>Instrumentos industriales de medición <span>de confianza en Cuba</span></h1>
+      <p>C&G ESTÁNDAR, S.U.R.L. es una MIPYME cubana especializada en la venta de equipos de medición industrial. También gestionamos otros productos según las necesidades de tu negocio.</p>
+      <a class="cta"
+         href="https://wa.me/5350922565?text=Hola,%20quiero%20cotizar%20un%20instrumento%20de%20medici%C3%B3n%20con%20C%26G%20EST%C3%81NDAR"
+         target="_blank" rel="noopener">
+        💬 Cotizar por WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <div class="container">
+      <div class="titulo">
+        <h2>Nuestros productos</h2>
+        <p>Instrumentos de medición para uso industrial y profesional</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icono">📏</div>
+          <h3>Calibradores y micrómetros</h3>
+          <p>Medición de precisión para talleres, metalurgia y control de calidad.</p>
+        </div>
+        <div class="card">
+          <div class="icono">🌡️</div>
+          <h3>Termómetros industriales</h3>
+          <p>Infrarrojos, digitales y de contacto para procesos térmicos.</p>
+        </div>
+        <div class="card">
+          <div class="icono">⚙️</div>
+          <h3>Manómetros y presostatos</h3>
+          <p>Control de presión en sistemas hidráulicos, neumáticos y de vapor.</p>
+        </div>
+        <div class="card">
+          <div class="icono">🔌</div>
+          <h3>Multímetros y pinzas</h3>
+          <p>Medición eléctrica para mantenimiento e instalaciones.</p>
+        </div>
+        <div class="card">
+          <div class="icono">📡</div>
+          <h3>Sensores y transmisores</h3>
+          <p>Temperatura, presión, nivel y caudal para automatización.</p>
+        </div>
+        <div class="card">
+          <div class="icono">🛠️</div>
+          <h3>Otros productos a pedido</h3>
+          <p>¿Necesitas algo específico? Valoramos tu solicitud según tus necesidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section id="beneficios">
+    <div class="container">
+      <div class="titulo">
+        <h2>Por qué elegir C&G ESTÁNDAR, S.U.R.L.</h2>
+      </div>
+      <div class="beneficios">
+        <div class="beneficio">
+          <h3>✔ Asesoría personalizada</h3>
+          <p>Te ayudamos a elegir el instrumento correcto según tu aplicación.</p>
+        </div>
+        <div class="beneficio">
+          <h3>✔ Productos bajo pedido</h3>
+          <p>Si no lo tenemos, lo gestionamos según tus necesidades.</p>
+        </div>
+        <div class="beneficio">
+          <h3>✔ Atención directa</h3>
+          <p>Comunicación rápida y clara por WhatsApp o correo.</p>
+        </div>
+        <div class="beneficio">
+          <h3>✔ Compromiso cubano</h3>
+          <p>MIPYME local enfocada en el desarrollo industrial del país.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contacto">
+    <div class="container">
+      <div class="cta-final">
+        <h2>¿Listo para cotizar?</h2>
+        <p>Escríbenos por WhatsApp o correo con lo que necesitas y te respondemos lo antes posible.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a class="cta"
+             href="https://wa.me/5350922565?text=Hola,%20quiero%20cotizar%20un%20producto%20con%20C%26G%20EST%C3%81NDAR"
+             target="_blank" rel="noopener">
+            💬 WhatsApp
+          </a>
+          <a class="cta" style="background:#1f6feb;"
+             href="mailto:cygestandar@gmail.com?subject=Cotizaci%C3%B3n%20-%20C%26G%20EST%C3%81NDAR&body=Hola,%20quiero%20cotizar%20un%20producto.">
+            ✉️ Enviar correo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 C&G ESTÁNDAR, S.U.R.L. · Sociedad Unipersonal de Responsabilidad Limitada</p>
+      <p style="margin-top:0.5rem">MIPYME cubana de instrumentos industriales de medición</p>
+      <p style="margin-top:0.8rem">
+        <a href="https://wa.me/5350922565" target="_blank" rel="noopener">WhatsApp: +53 5 0922565</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:cygestandar@gmail.com">cygestandar@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE -->
+  <a class="wa-flotante"
+     href="https://wa.me/5350922565?text=Hola,%20quiero%20informaci%C3%B3n"
+     target="_blank" rel="noopener"
+     aria-label="Contactar por WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
